@@ -1,0 +1,15 @@
+version: '3.3'
+
+services:
+  redis:
+    container_name: redis-clone
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    environment: 
+      PORT: "6380"
+    ports:
+      - 6380:6380
+    volumes:
+      - ./db.aof:/app/db.aof
+

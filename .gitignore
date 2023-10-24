@@ -1,3 +1,4 @@
 db.aof
 __debug_bin*
+bin/*
 
