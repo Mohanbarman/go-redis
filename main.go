@@ -2,21 +2,26 @@ package main
 
 import (
 	"fmt"
+	"github.com/Mohanbarman/redis-clone/aof"
+	"github.com/Mohanbarman/redis-clone/commands"
+	"github.com/Mohanbarman/redis-clone/resp"
 	"net"
 	"os"
 	"strings"
-  "github.com/Mohanbarman/redis-clone/aof"
-	"github.com/Mohanbarman/redis-clone/commands"
-	"github.com/Mohanbarman/redis-clone/resp"
 )
 
 func main() {
-	l, err := net.Listen("tcp", ":6380")
+	port := ":6380"
+	if len(os.Args) > 1 {
+		port = fmt.Sprintf(":%s", os.Args[1])
+	}
+
+	l, err := net.Listen("tcp", port)
 	if err != nil {
 		fmt.Println(err)
 		os.Exit(1)
 	}
-	fmt.Println("Listening on port 6380")
+	fmt.Println("Listening on port", port)
 
 	aof, err := aof.NewAof("db.aof")
 	if err != nil {
@@ -28,12 +33,12 @@ func main() {
 
 	err = aof.Read(func(v resp.Value) {
 		command := strings.ToUpper(v.Array[0].Bulk)
-    args := v.Array[1:]
+		args := v.Array[1:]
 		handler, ok := commands.Handlers[command]
-    options, err := commands.ParseOptions(command, args)
-    if err != nil {
-      return
-    }
+		options, err := commands.ParseOptions(command, args)
+		if err != nil {
+			return
+		}
 		if !ok {
 			return
 		}
@@ -75,12 +80,12 @@ func main() {
 
 				command := strings.ToUpper(value.Array[0].Bulk)
 				args := value.Array[1:]
-        commandOptions, err := commands.ParseOptions(command, args)
+				commandOptions, err := commands.ParseOptions(command, args)
 
-        if err != nil {
-          writer.Write(resp.Value{Typ: "error", Str: err.Error()})
-          continue
-        }
+				if err != nil {
+					writer.Write(resp.Value{Typ: "error", Str: err.Error()})
+					continue
+				}
 
 				handler, ok := commands.Handlers[command]
 				if !ok {

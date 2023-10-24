@@ -106,4 +106,3 @@ func (r *Resp) Read() (Value, error) {
 		return Value{}, nil
 	}
 }
-
