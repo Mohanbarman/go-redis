@@ -1,5 +1,5 @@
-# redis-clone
-A redis clone built using go on RESP protocol, standard `redis-client` can be used to interact with it
+# go-redis
+A Redis clone built using go uses [RESP](https://redis.io/docs/reference/protocol-spec/) protocol.
 
 ## Features
 1. Set and get the key value.
