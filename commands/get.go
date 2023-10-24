@@ -2,7 +2,7 @@ package commands
 
 import (
 	"time"
-	"github.com/Mohanbarman/redis-clone/resp"
+	"github.com/Mohanbarman/go-redis/resp"
 )
 
 func get(args []resp.Value, options Options) resp.Value {

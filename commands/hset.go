@@ -1,7 +1,7 @@
 package commands
 
 import (
-	"github.com/Mohanbarman/redis-clone/resp"
+	"github.com/Mohanbarman/go-redis/resp"
 )
 
 func hset(args []resp.Value, options Options) resp.Value {

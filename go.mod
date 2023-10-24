@@ -1,3 +1,3 @@
-module github.com/Mohanbarman/redis-clone
+module github.com/Mohanbarman/go-redis
 
 go 1.20

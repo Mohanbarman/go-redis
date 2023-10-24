@@ -4,7 +4,7 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/Mohanbarman/redis-clone/resp"
+	"github.com/Mohanbarman/go-redis/resp"
 )
 
 func pexpireat(args []resp.Value, options Options) resp.Value {

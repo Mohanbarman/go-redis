@@ -2,9 +2,9 @@ package main
 
 import (
 	"fmt"
-	"github.com/Mohanbarman/redis-clone/aof"
-	"github.com/Mohanbarman/redis-clone/commands"
-	"github.com/Mohanbarman/redis-clone/resp"
+	"github.com/Mohanbarman/go-redis/aof"
+	"github.com/Mohanbarman/go-redis/commands"
+	"github.com/Mohanbarman/go-redis/resp"
 	"net"
 	"os"
 	"strings"

@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/Mohanbarman/redis-clone/resp"
+	"github.com/Mohanbarman/go-redis/resp"
 )
 
 type Options struct {

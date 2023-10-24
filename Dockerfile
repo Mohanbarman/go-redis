@@ -7,9 +7,9 @@ RUN go mod download
 
 COPY . .
 
-RUN go build -o ./bin/redis-clone .
+RUN go build -o ./bin/go-redis .
 
 EXPOSE $PORT
 
-CMD "bin/redis-clone" $PORT
+CMD "bin/go-redis" $PORT
 

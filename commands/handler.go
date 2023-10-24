@@ -4,7 +4,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/Mohanbarman/redis-clone/resp"
+	"github.com/Mohanbarman/go-redis/resp"
 )
 
 var Handlers = map[string]func([]resp.Value, Options) resp.Value{

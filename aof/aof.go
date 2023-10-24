@@ -8,8 +8,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/Mohanbarman/redis-clone/commands"
-	"github.com/Mohanbarman/redis-clone/resp"
+	"github.com/Mohanbarman/go-redis/commands"
+	"github.com/Mohanbarman/go-redis/resp"
 )
 
 type Aof struct {

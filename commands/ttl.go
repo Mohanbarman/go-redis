@@ -3,7 +3,7 @@ package commands
 import (
 	"time"
 
-	"github.com/Mohanbarman/redis-clone/resp"
+	"github.com/Mohanbarman/go-redis/resp"
 )
 
 func ttl(args []resp.Value, options Options) resp.Value {
